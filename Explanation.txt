@@ -1,0 +1,41 @@
+KNN: -
+
+The above code is an implementation of the k-nearest neighbors (KNN) algorithm from scratch in Python. The KNN algorithm is a type of supervised machine learning algorithm that can be used for classification and regression tasks.
+
+The code defines a class called "KNN" that takes in a parameter "k" when it is instantiated. The "k" value represents the number of nearest neighbors that will be considered when making predictions.
+--------------------------------------
+The "fit" method of the class takes in the training data (X) and the labels (y) and assigns them to class variables "X_train" and "y_train" respectively.
+--------------------------------------
+The "euclidean_distance" method calculates the Euclidean distance between two points (x1 and x2) by taking the square root of the sum of the squares of the differences between the corresponding coordinates of the two points.
+--------------------------------------
+The "neighbours" method takes in a single data point (X) and calculates the Euclidean distance between that point and all the points in the training data. It then sorts the distances in ascending order and returns the indices of the k closest points.
+--------------------------------------
+The "predict" method takes in a new set of data points (X) and for each point, it finds the k closest points to it by calling the "neighbours" method. It then finds the most common label among those k closest points, and assigns that label as the prediction for that point. Finally, it returns a list of predictions for all the input points.
+
+-----------------------------------------------------------------------
+Logistic Regression: -
+
+The above code is an implementation of the Logistic Regression algorithm in Python. Logistic Regression is a supervised machine learning algorithm used for classification problems.
+
+The class LogisticRegression has 3 initial parameters:
+
+learning_rate: The learning rate is a hyperparameter that controls the step size at which the algorithm learns. It is used to update the parameters of the model during training.
+--------------------------------------
+num_iterations: The number of iterations is the number of times the algorithm updates the parameters of the model.
+--------------------------------------
+fit_intercept: The fit_intercept parameter is a boolean value that determines whether to add an intercept term to the model or not.
+The __init__ method is called when an object of the class is created. It initializes the object with the provided parameter values or with default values if none are provided.
+
+The class has three methods:
+
+sigmoid() method: it takes in a value 'z' and returns the sigmoid of that value. The sigmoid function is used as the activation function in logistic regression. It maps any input value to a value between 0 and 1, which is interpretable as the probability of the input belonging to the positive class.
+--------------------------------------
+softmax() method: it takes in a value 'z' and returns the softmax of that value. The softmax function is used to convert the output of the model into probability values. It maps the output values of a model to a probability distribution over all possible output classes.
+--------------------------------------
+fit() method: it takes in two parameters: X and y. X is the feature matrix and y is the target vector. The fit method is used to train the model. It first adds an intercept term if the fit_intercept parameter is set to True. Then it creates an empty list 'parameters' and iterates over the unique values of y. For each iteration, it creates a binary version of y where the target value is replaced with 1 and all other values with 0. Then it initializes theta, the parameter values of the model, with zeros and performs the gradient descent algorithm to update the theta values. The number of iterations is controlled by the num_iterati-ons parameter.
+--------------------------------------
+predict_proba() method: it takes in one parameter, X, and returns the probability of each class for each data point in X. It first adds an intercept term if the fit_intercept parameter is set to True. Then it iterates over the parameters and calculates the probability of each class for each data point in X. Then it returns the softmax of the calculated probabilities.
+--------------------------------------
+predict() method: it takes in one parameter, X, and returns the class label for each data point in X. It first calls the predict_proba method and then returns the class label with the highest probability.
+Overall this code is a simple implementation of logistic regression which can be used for multi-class classification problem, where the target variable has multiple classes and the goal is to predict the class label for new data points.
+----------------------------------------------------------------------
